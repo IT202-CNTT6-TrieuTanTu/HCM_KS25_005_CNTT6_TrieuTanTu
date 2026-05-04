@@ -101,13 +101,9 @@ WHERE salary > 50000000 AND salary < 150000000;
 SELECT * FROM Matchs
 WHERE match_id = 'MS_007';
 
-SELECT nickname, spot
-FROM Player
-WHERE team_id IN (
-    SELECT team_id
-    FROM Team
-    WHERE KhuVuc = 'Vietnam'
-);
-
+SELECT nickname AS 'Ten nguoi choi', spot AS 'Vi tri'
+FROM Player p, Team t
+WHERE p.team_id = t.team_id 
+AND t.KhuVuc = 'Vietnam';
 
 
